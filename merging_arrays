@@ -1,0 +1,29 @@
+class solution:
+  def merging:
+    nm = input()
+    nm = list(map(int, nm.split()))
+    n = nm[0]
+    m = nm[1]
+    nums1 = input()
+    nums1 = list(map(int, nums1.split()))
+    nums2 = input()
+    nums2 = list(map(int, nums2.split()))
+    n1 = n2 = 0
+    merged = []
+    while n1 < n and n2 < m:
+        if nums1[n1] < nums2[n2]:
+            merged.append(nums1[n1])
+            n1 += 1
+        else:
+            merged.append(nums2[n2])
+            n2 += 1
+    while n1 < n:
+        merged.append(nums1[n1])
+        n1 += 1
+    while n2 < m:
+        merged.append(nums2[n2])
+        n2 += 1
+    cout = ""
+    for i in merged:
+        cout += str(i) + " "
+print(cout)
